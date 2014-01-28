@@ -1,0 +1,32 @@
+<div class="container">
+	<br><br>
+	<div class="jumbotron">
+		<h1>Välkomna till Energia</h1> Vi är ett par energiintresserade studenter som vill skapa ett lättanvänt verktyg för att standardisera de första stegen av en energikartläggning.<br><br>
+
+		Vill ni ha ett lösenord till demot, eller har synpunkter på hur ni vill att tjänsten skall utformas? Hör av er <a href="mailto:detoskar@gmail.com">via mail</a>.
+
+	</div>
+</div>
+
+<form name="form" class="css-form" novalidate>
+	<div class="text-center">
+		<table class="table">
+			<tr>
+				<td>E-mail: </td>
+				<td><input name="user.email" ng-model="user.email" required></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password"  name="password" ng-model="password" required></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button ng-click="loginUser()" type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Login</button></td>
+			</tr>
+		</table>
+	</div>
+</form>
+
+
+
+

@@ -1,0 +1,61 @@
+<div class="hero-unit">
+	<div ng-include="'views/partials/topMenu.html'"></div>
+	<div class="tableContainer">
+		<div class="text-center">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default" ng-click="showEnergy(true)" id="energyButton">Energibalans</button>
+				<button type="button" class="btn btn-default" ng-click="showEnergy(false)" id="powerButton">Effektbalans</button>
+			</div>
+		</div>
+		<br>
+<!-- 		<table class="table">
+			<tr>
+				<td>{{keyMetrics.energy}}</td>
+				<td>{{keyMetrics.power}}</td>
+			</tr>
+		</table> -->
+		<table class="table" id="excelTable1">
+			<thead><tr><th>Stödprocesser</th><th></th><th></th></tr></thead>
+			<tbody>
+				<tr ng-repeat="process in supportTypes">
+					<td>{{process.title}}</td>
+					<td>
+						<div ng-show="shouldShowEnergy">{{process.energy}}</div>
+						<div ng-show="shouldShowPower">{{process.power}}</div>
+					</td>
+					<td>
+						<div ng-show="shouldShowEnergy">MWh/år</div>
+						<div ng-show="shouldShowPower">kW</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="table" id="excelTable2">
+			<thead><tr><th>Produktionsprocesser</th><th></th><th></th></tr></thead>
+			<tbody>
+				<tr ng-repeat="process in productionTypes">
+					<td>{{process.title}}</td>
+					<td>
+						<div ng-show="shouldShowEnergy">{{process.energy}}</div>
+						<div ng-show="shouldShowPower">{{process.power}}</div>
+					</td>
+					<td>
+						<div ng-show="shouldShowEnergy">MWh/år</div>
+						<div ng-show="shouldShowPower">kW</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+	</div>
+	<div class="bottomContainer" id="barGraphContainer">
+		<div id="barGraph">
+			Laddar graf...
+		</div>
+		<div id="pieGraph">
+			Laddar graf...
+		</div>
+	</div>
+	<div ng-include="'views/partials/exportExcel.html'"></div>
+</div>

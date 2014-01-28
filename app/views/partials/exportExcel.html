@@ -1,0 +1,14 @@
+<div class="text-center">
+<button class="btn btn-info btn-sm" ng-click="createExcel()">Spara data till excel</button> <button type="button" class="btn btn-xs btn-inverse" data-container="body" data-toggle="popover" data-placement="right" data-content='
+För att använda datan i Excel gör följande:
+1) Klicka på knappen bredvid och vänta på att du blir förfrågad att spara en fil
+2) Spara filen som filtyp ".htm", exempelvis: processer.htm
+3) Starta Excel, välj "Öppna..." och navigera till mappen där Ni just sparade filen
+4) Markera filen.htm och klicka på öppna'
+ id="help">?</button>
+</div>
+
+<script>
+$('#help').popover('toggle');
+$('#help').popover('hide');
+</script>

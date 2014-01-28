@@ -1,0 +1,28 @@
+<div class="hero-unit">
+	<div class="text-center">
+		<b>Project Menu</b><br>
+	</div>
+	<table class="table">
+		<tr>
+			<td>Select project:</td>
+			<td><select ng-model="chosenProject" ng-options="project as project.title for project in projects" ng-change="updateProject()"></select></td>
+		</tr>
+		<tr>
+			<td>Beskrivning:</td>
+			<td>{{chosenProject.description}}</td>
+		</tr>
+		<tr>
+			<td>Företag:</td>
+			<td>{{chosenProject.company_name}}</td>
+		</tr>
+		<tr>
+			<td>Area:</td>
+			<td>{{chosenProject.area}} sqm</td>
+		</tr>
+	</table>
+			<a href="#/project/general">Generella värden</a><br>
+		<a href="#/project/billing">Fakturainformation</a><br>
+		<a href="#/process/production">Produktionsprocesser</a><br>
+		<a href="#/process/support">Stödprocesser</a><br>
+		<a href="#/project/results">Resultat</a><br>
+</div>

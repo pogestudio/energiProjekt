@@ -1,0 +1,29 @@
+<div class="hero-unit">
+<div ng-include="'views/partials/topMenu.html'"></div>
+	<div class="text-center">
+		<b>Fakturainformation</b>
+		<form name="form" class="css-form" novalidate>
+			<table class="table">
+				<tr ng-repeat="energyType in energyTypes">
+					<td>
+						{{energyType.title}}: 
+					</td>
+					<td>
+						<input class="inputField" type="text" ng-model="energyType.quantity" name="quantity{{energyType.id}}" required/>
+					</td>
+					<td>
+						<select ng-model="energyType.unit" ng-options="unit for unit in availableUnits" class="miniWidth"></select>/år
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<a href="#/project/menu"><button class="btn btn-warning">Avbryt</button></a>
+					</td>
+					<td>
+						<button class="btn btn-success" ng-click="saveValues()" ng-disabled="form.$invalid">Spara</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>

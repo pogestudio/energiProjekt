@@ -1,0 +1,25 @@
+<div class="hero-unit">
+	<div ng-include="'views/partials/topMenu.html'"></div>
+	<div class="text-center">
+		<b>{{pageTitle}}</b>
+	</div>
+	<a href="#/process/create"><button class="btn btn-sm btn-primary">Skapa ny</button></a><br>
+	<div ng-repeat="processType in parsedProcesses">
+		<b>{{processType.title}}</b> - <i>{{processType.totalEnergy}}MWh</i>
+		<table class="table" id="excelTable">
+			<thead><tr><td>rum</td><td>apparat</td><td>antal [st]</td><td>effekt [kW]</td><td>drifttid[h/vecka]</td><td>energi[MWh]</td></tr></thead>
+			<tbody>
+				<tr ng-repeat="process in processType.processes">
+					<td>{{process.buildingTitle}}</td>
+					<td>{{process.title}}</td>
+					<td>{{process.quantity}}</td>
+					<td>{{process.power}}</td>
+					<td>{{process.uptime_per_week}}</td>
+					<td>{{process.totalEnergy}}</td>
+					<td><button class="btn btn-danger btn-xs" ng-click="deleteProcess(process)">X</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div ng-include="'views/partials/exportExcel.html'"></div>
+</div>

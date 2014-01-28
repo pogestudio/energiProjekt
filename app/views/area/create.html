@@ -1,0 +1,43 @@
+<div class="hero-unit">
+	<div class="text-center">
+		<form name="form" class="css-form" novalidate>
+			<u>Projekt: {{project.title}}</u><br>
+			<table class="table">
+				<tr>
+					<td>Byggnad: </td>
+					<td><input type="radio" ng-model="isRoom" value="false"></td>
+				</tr>
+				<tr ng-show="buildingExists">
+					<td>Rum: </td>
+					<td><input type="radio" ng-model="isRoom" value="true"></td>
+				</tr>
+				<tr>
+					<td>Titel: </td>
+					<td><input type="text" ng-model="area.title" name="aTitle"/><br />
+					</td>
+				</tr>
+				<tr>
+					<td>Beskrivning: </td>
+					<td>
+						<input type="text" ng-model="area.description" name="aDescription"/>
+					</td>
+				</tr>
+				<tr ng-show="isRoom">
+					<td>Tillhör: </td>
+					<td>
+						<select ng-model="area.ownerArea" ng-options="building.id as building.title for building in buildings"></select>
+					</td>
+				</tr>
+				<tr>
+					<td><a href="/#/project/general"><button class="btn btn-warning">Avbryt</button></a></td>
+					<td><button ng-click="createArea()" type="submit" class="btn btn-success" ng-disabled="form.$invalid">Skapa</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>
+
+
+
+
+

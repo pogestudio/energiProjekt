@@ -1,0 +1,52 @@
+<div class="hero-unit">
+	<div class="text-center">
+		{{pageTitle}}
+		<table class="table">
+			<form name="form" class="css-form" novalidate>
+				<tr>
+					<td colspan="2">
+						Produktion:
+						<input type="radio" ng-model="processType" value="production" ng-change="changeType('production')">
+						Stöd: <input type="radio" ng-model="processType" value="support" ng-change="changeType('support')">
+					</td>
+				</tr>
+				<tr>
+					<td>Typ: </td>
+					<td><select ng-model="process.processtype_id" ng-options="processType.id as processType.name for processType in processTypes"></select></td>
+				</tr>
+				<tr>
+					<td>Apparat: </td>
+					<td><input type="text" ng-model="process.title" name="pTitle"/></td>
+				</tr>
+				<tr>
+					<td>
+						Effekt: </td><td><input type="text" ng-model="process.power" name="pPower"/>kW
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Drifttid: </td><td><input type="text" ng-model="process.uptime_per_week" name="pPower"/>h/vecka
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Antal: </td><td><input type="text" ng-model="process.quantity" name="pQuantity"/>st
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Tillhör område: </td><td><select ng-model="process.area_id" ng-options="area.id as area.title for area in areas"></select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="#/project/menu"><button class="btn btn-warning btn-sm">Avbryt</button></a>
+					</td>
+					<td>
+						<button ng-click="submitForm()" ng-disabled="form.$invalid" class="btn btn-success btn-sm" >Spara</button>
+					</td>
+				</tr>
+			</form>
+		</table>
+	</div>
+</div>

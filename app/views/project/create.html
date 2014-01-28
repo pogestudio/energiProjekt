@@ -1,0 +1,49 @@
+<div class="hero-unit">
+	<div class="text-center">
+		Hello {{user.username}}<br>
+		<b>Skapa nytt projekt</b>
+		<form name="form" class="css-form" novalidate>
+			<table class="table">
+				<tr>
+					<td>Projektnamn: </td>
+					<td>
+						<input type="text" ng-model="project.title" name="pTitle" required/>
+						<div ng-show="form.pTitle.$invalid">Fel:
+							<span ng-show="form.pTitle.$error.required">Projektnamn krävs</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Beskrivning: </td>
+					<td><input type="text" ng-model="project.description" name="pDescription"/></td>
+				</tr>
+				<tr>
+					<td>Företagsnamn: </td>
+					<td>
+						<input type="text" ng-model="project.company_name" name="pCompanyName" required/>
+						<div ng-show="form.pCompanyName.$invalid">Fel:
+							<span ng-show="form.pCompanyName.$error.required">Företagsnamn krävs</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Total area: </td>
+					<td><input type="text" ng-model="project.area" name="pArea"/></td>
+				</tr>
+				<tr>
+					<td>Semesterveckor per år: </td>
+					<td>
+						<input type="text" ng-model="project.vacation_weeks" name="pVacationWeeks" required/>
+						<div ng-show="form.pVacationWeeks.$invalid">Fel:
+							<span ng-show="form.pVacationWeeks.$error.required">Semesterväckor krävs</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><a href="#/project/menu"><button class="btn btn-warning">Avbryt</button></a></td>
+					<td><button ng-click="createProject()" ng-disabled="form.$invalid" class="btn btn-success">Spara</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>
